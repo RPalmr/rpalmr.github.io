@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Reece Palmer — machine learning engineer working with Python, with interests in neurodegenerative disease and computational biology.">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="color-scheme" content="light">
+  <title>Reece Palmer</title>
+  <style>
+    * { box-sizing: border-box; }
+    html { min-height: 100%; background: #fff; color: #191919; color-scheme: only light; }
+    body { max-width: 720px; margin: 76px auto; padding: 0 24px; background: #fff; font: 16px/1.65 Arial, Helvetica, sans-serif; }
+    header { display: flex; align-items: center; gap: 24px; }
+    header p { margin-bottom: 0; color: #666; }
+    .portrait { display: block; width: 104px; height: 128px; flex-shrink: 0; object-fit: cover; object-position: 50% 35%; border-radius: 3px; }
+    h1 { margin: 0 0 10px; font-size: 32px; line-height: 1.2; letter-spacing: -1.2px; }
+    h2 { margin: 0 0 20px; padding-bottom: 8px; border-bottom: 1px solid #bbb; font-size: 19px; line-height: 1.4; letter-spacing: -.3px; }
+    p { margin: 0 0 16px; }
+    a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    a:hover { color: #666; }
+    a:focus-visible { outline: 2px solid currentColor; outline-offset: 5px; }
+    nav { display: flex; flex-wrap: wrap; gap: 6px 20px; margin-top: 12px; font-size: 14px; }
+    section { margin-top: 44px; }
+    .intro { max-width: 620px; margin-top: 28px; }
+    .work { padding-left: 20px; margin: 0; }
+    .work li { padding-left: 3px; margin-bottom: 20px; }
+    .work strong { display: block; margin-bottom: 2px; }
+    .work li:last-child { margin-bottom: 0; }
+    .entry { margin-bottom: 24px; }
+    .entry:last-child { margin-bottom: 0; }
+    .entry-heading { display: flex; justify-content: space-between; align-items: baseline; gap: 8px 24px; }
+    .entry-heading h3 { font-size: 16px; line-height: 1.5; margin: 0; font-weight: normal; }
+    .date, .detail { color: #666; font-size: 14px; }
+    .date { flex-shrink: 0; white-space: nowrap; font-variant-numeric: tabular-nums; }
+    .entry p { margin: 5px 0 0; }
+    .entry .supervisor { margin-top: 2px; }
+    .supervisor span { color: #333; }
+    footer { border-top: 1px solid #ddd; margin-top: 44px; padding-top: 18px; font-size: 14px; color: #666; }
+    @media (max-width: 540px) {
+      body { margin: 40px auto; padding: 0 22px; }
+      h1 { font-size: 30px; }
+      section { margin-top: 36px; }
+      .entry-heading { flex-direction: column; gap: 0; }
+    }
+    @media (max-width: 400px) {
+      header { flex-direction: column; align-items: flex-start; gap: 22px; }
+      .portrait { width: 96px; height: 116px; }
+    }
+    @media print {
+      body { margin: 0 auto; font-size: 11pt; }
+      section { margin-top: 24px; }
+      .entry { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img class="portrait" src="me.jpeg" alt="Reece Palmer" width="104" height="128">
+    <div>
+      <h1>Reece Palmer</h1>
+      <p>Machine learning engineer.</p>
+      <nav aria-label="Contact and profiles">
+        <a href="mailto:reecelpalmer@gmail.com">Email</a>
+        <a href="https://github.com/rpalmr">GitHub</a>
+        <a href="https://www.linkedin.com/in/reecepalmer">LinkedIn</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <p class="intro">I’m Reece, an ml engineer working with Python build models and solve problems; I enjoy research and compbio, reading papers and writing papers. My interests span neurodegenerative disease and computational biology, where I also contribute through non-profit work. I try my best to contribute to os projects when I find the time.</p>
+
+    <section aria-labelledby="work">
+      <h2 id="work">Selected work</h2>
+      <ul class="work">
+        <li><strong>Protein structure &amp; search</strong> Built a structure-informed protein analysis workflow using pretrained models, PyTorch, Hugging Face, Biopython, and Foldseek.</li>
+        <li><strong>Protein interaction prediction</strong> Developed and evaluated models for protein interactions, including ESM-2 fine-tuning, similarity-aware evaluation, and repeatable training workflows.</li>
+        <li><strong>Causal machine learning</strong> Investigated deconfounding and transport methods for Parkinson’s detection from clinical voice data, supervised by <a href="https://www.birmingham.ac.uk/staff/profiles/computer-science/academic-staff/little-max">Dr. Max A Little</a>.</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="experience">
+      <h2 id="experience">Experience</h2>
+      <div class="entry">
+        <div class="entry-heading">
+          <h3><strong>Machine Learning Engineer</strong> · <a href="https://appliedcl.com">AppliedCL</a></h3>
+          <span class="date">Mar 2026 – present</span>
+        </div>
+        <p class="detail">Protein modelling, biological representations, and model evaluation.</p>
+      </div>
+      <div class="entry">
+        <div class="entry-heading">
+          <h3><strong>Student Researcher</strong> · <a href="https://www.birmingham.ac.uk/">University of Birmingham</a></h3>
+          <span class="date">Oct 2025 – Sep 2026</span>
+        </div>
+        <p class="detail">Causal learning and generalisation in clinical voice data.</p>
+      </div>
+      <div class="entry">
+        <div class="entry-heading">
+          <h3><strong>Independent development</strong></h3>
+          <span class="date">Sep 2024 – Sep 2025</span>
+        </div>
+        <p class="detail"><a href="https://www.joinef.com/">Entrepreneur First</a>’s summer 2025 Founder in Residence cohort, startup work, and prototypes at <a href="https://a16zcrypto.com/posts/article/hack-uk-london-hackathon/">a16z HACK UK</a>, <a href="https://25.ichack.org/">IC HACK</a>, and <a href="https://www.encodeclub.com/">Encode</a>.</p>
+      </div>
+      <div class="entry">
+        <div class="entry-heading">
+          <h3><strong>Co-Founder</strong> · <a href="https://gininow.com">GiniNow</a></h3>
+          <span class="date">Nov 2022 – Oct 2023</span>
+        </div>
+        <p class="detail">An online marketplace connecting people with experts. Managed operations and finances for a team of seven.</p>
+      </div>
+    </section>
+
+    <section aria-labelledby="education">
+      <h2 id="education">Education</h2>
+      <div class="entry">
+        <div class="entry-heading">
+          <h3><strong>MSc Computer Science</strong> · <a href="https://www.birmingham.ac.uk/">University of Birmingham</a></h3>
+          <span class="date">2025 – 2026</span>
+        </div>
+        <p class="detail">71% overall · 75% dissertation</p>
+        <p class="detail supervisor">Dissertation supervisor: <span><a href="https://www.birmingham.ac.uk/staff/profiles/computer-science/academic-staff/little-max">Dr. Max A Little</a></span></p>
+      </div>
+      <div class="entry">
+        <div class="entry-heading">
+          <h3><strong>BA Business</strong> · <a href="https://www.port.ac.uk/">University of Portsmouth</a></h3>
+          <span class="date">2020 – 2023</span>
+        </div>
+        <p class="detail">68% overall · Strategy, enterprise, and innovation.</p>
+        <p class="detail supervisor">Dissertation supervisor: <span><a href="https://www.surrey.ac.uk/people/sunghwan-daniel-cho">Dr. Daniel Cho</a></span></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>Get in touch: <a href="mailto:reecelpalmer@gmail.com">reecelpalmer@gmail.com</a></footer>
+</body>
+</html>

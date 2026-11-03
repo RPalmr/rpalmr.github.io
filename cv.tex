@@ -1,0 +1,338 @@
+\documentclass[10pt, letterpaper]{article}
+
+% Packages:
+\usepackage[
+    ignoreheadfoot,
+    top=2 cm,
+    bottom=2 cm,
+    left=1.2 cm,
+    right=1.2 cm,
+    footskip=1.0 cm
+]{geometry}
+\usepackage{titlesec}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage[dvipsnames]{xcolor}
+\definecolor{primaryColor}{RGB}{0, 0, 0}
+\usepackage{enumitem}
+\usepackage{fontawesome5}
+\usepackage{amsmath}
+\usepackage[
+    pdftitle={Reece Palmer's CV},
+    pdfauthor={Reece Palmer},
+    pdfcreator={LaTeX with RenderCV},
+    colorlinks=true,
+    urlcolor=primaryColor
+]{hyperref}
+\usepackage[pscoord]{eso-pic}
+\usepackage{calc}
+\usepackage{bookmark}
+\usepackage{lastpage}
+\usepackage{changepage}
+\usepackage{paracol}
+\usepackage{ifthen}
+\usepackage{needspace}
+\usepackage{iftex}
+
+% Ensure that generated PDF is machine readable / ATS parsable:
+\ifPDFTeX
+    \input{glyphtounicode}
+    \pdfgentounicode=1
+    \usepackage[T1]{fontenc}
+    \usepackage[utf8]{inputenc}
+    \usepackage{lmodern}
+\fi
+
+\usepackage[scaled=0.95]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+
+% Some settings:
+\raggedright
+\AtBeginEnvironment{adjustwidth}{\partopsep0pt}
+\pagestyle{empty}
+\setcounter{secnumdepth}{0}
+\setlength{\parindent}{0pt}
+\setlength{\topskip}{0pt}
+\setlength{\columnsep}{0.15cm}
+\pagenumbering{gobble}
+
+\titleformat{\section}
+    {\needspace{4\baselineskip}\bfseries\large}
+    {}
+    {0pt}
+    {}
+    [\vspace{1pt}\titlerule]
+
+\titlespacing{\section}{
+    -1pt
+}{
+    0.3 cm
+}{
+    0.2 cm
+}
+
+\renewcommand\labelitemi{$\vcenter{\hbox{\small$\bullet$}}$}
+
+\newenvironment{highlights}{
+    \begin{itemize}[
+        topsep=0.10 cm,
+        parsep=0pt,
+        partopsep=0pt,
+        itemsep=0pt,
+        leftmargin=0 cm + 10pt
+    ]
+}{
+    \end{itemize}
+}
+
+\newenvironment{highlightsforbulletentries}{
+    \begin{itemize}[
+        topsep=0.10 cm,
+        parsep=0pt,
+        partopsep=0pt,
+        itemsep=0pt,
+        leftmargin=10pt
+    ]
+}{
+    \end{itemize}
+}
+
+\newcommand{\nobullet}{\item[]}
+
+\newenvironment{onecolentry}{
+    \begin{adjustwidth}{
+        0 cm + 0.00001 cm
+    }{
+        0 cm + 0.00001 cm
+    }
+}{
+    \end{adjustwidth}
+}
+
+\newenvironment{twocolentry}[2][]{
+    \onecolentry
+    \def\secondColumn{#2}
+    \setcolumnwidth{\fill, 4.5 cm}
+    \begin{paracol}{2}
+}{
+    \switchcolumn \raggedleft \secondColumn
+    \end{paracol}
+    \endonecolentry
+}
+
+\newenvironment{threecolentry}[3][]{
+    \onecolentry
+    \def\thirdColumn{#3}
+    \setcolumnwidth{, \fill, 4.5 cm}
+    \begin{paracol}{3}
+    {\raggedright #2} \switchcolumn
+}{
+    \switchcolumn \raggedleft \thirdColumn
+    \endonecolentry
+    \end{paracol}
+}
+
+\newenvironment{header}{
+    \setlength{\topsep}{0pt}\par\kern\topsep\centering\linespread{1.5}
+}{
+    \par\kern\topsep
+}
+
+\newcommand{\projectheader}[2]{%
+    \href{#1}{\textbf{#2} \small\faExternalLink*}%
+}
+
+\begin{document}
+
+\newcommand{\AND}{\unskip
+    \cleaders\copy\ANDbox\hskip\wd\ANDbox
+    \ignorespaces
+}
+
+\newsavebox\ANDbox
+\sbox\ANDbox{$|$}
+
+% =========================
+% HEADER
+% =========================
+
+\begin{header}
+    {\fontsize{25 pt}{25 pt}\selectfont Reece Palmer}\\[0.4cm]
+    \normalsize
+    \mbox{\href{mailto:reecelpalmer@gmail.com}{reecelpalmer@gmail.com}}%
+    \kern 5.0 pt%
+    \AND%
+    \kern 5.0 pt%
+    \mbox{\href{https://www.linkedin.com/in/reecepalmer}{linkedin.com/in/reecepalmer}}%
+    \kern 5.0 pt%
+    \AND%
+    \kern 5.0 pt%
+    \mbox{\href{https://github.com/rpalmr}{github.com/rpalmr}}%
+\end{header}
+
+% =========================
+% EXPERIENCE
+% (XYZ: accomplished [X], as measured by [Y], by doing [Z].
+%  Anything in [square brackets] needs a real figure from you.)
+% =========================
+
+\section{Experience}
+
+\begin{twocolentry}{
+    Mar 2026 -- Present
+}
+    \textbf{Machine Learning Engineer}, AppliedCL
+\end{twocolentry}
+
+\vspace{0.10 cm}
+
+\begin{onecolentry}
+    \begin{highlights}
+        \item Designed and implemented a protein analysis workflow to enable structure-informed searches with Foldseek, integrating pretrained AI models through PyTorch, Hugging Face Transformers, and Biopython to achieve 62.48\% accuracy in predicting per-residue structural features.
+        \item Developed and evaluated AI models to identify interactions between proteins and protein complexes, systematically refining model architecture and training methods to achieve 93.56\% exploratory test AUROC, a measure of how well models distinguish interacting from non-interacting proteins.
+        \item Advanced research into sequence-based interaction prediction by initiating ESM-2 fine-tuning on experimentally supported biological data, implementing reliable checkpoint recovery to support continued training across computing sessions.
+        \item Established a repeatable evaluation framework using scikit-learn and MMseqs2, combining complementary AI representations to achieve 68.41\% mean validation AUROC and using prediction errors and protein similarity checks to guide subsequent experiments.
+    \end{highlights}
+\end{onecolentry}
+
+\vspace{0.2 cm}
+
+\begin{twocolentry}{
+    Oct 2025 -- Sept 2026
+}
+    \textbf{Student Researcher}, University of Birmingham
+\end{twocolentry}
+
+\vspace{0.10 cm}
+
+\begin{onecolentry}
+    \begin{highlights}
+        \item Improved Parkinson's detection from clinical voice data by [X\% / metric], by applying causal machine learning (de-confounding and transport methods).
+        \item Measured how well models generalise across [N] patient groups, by building and evaluating Python ML pipelines for [N] model types.
+    \end{highlights}
+\end{onecolentry}
+
+\vspace{0.2 cm}
+
+\begin{twocolentry}{
+    Sept 2024 -- Sept 2025
+}
+    \textbf{Independent Development}
+\end{twocolentry}
+
+\vspace{0.10 cm}
+
+\begin{onecolentry}
+    \begin{highlights}
+        \item Entrepreneur's First Founder in Residence, Summer 2025 cohort: rapidly investigated and invalidated multiple ideas, learning quickly and building relationships with talented founders, before leaving the cohort without a business or co-founder to start my master's.
+        \item Delivered 3 prototypes at London hackathons (a16z HACK UK, Imperial's IC HACK and Encode) within [24--48]-hour deadlines, by building [what] using [tech stack].
+        \item Volunteered short time at different friend's London based startups usually following angel investments.
+    \end{highlights}
+\end{onecolentry}
+
+\vspace{0.2 cm}
+
+
+\begin{twocolentry}{
+    Nov 2022 -- Oct 2023
+}
+    \textbf{Co-Founder}, \href{https://gininow.com}{GiniNow}
+\end{twocolentry}
+
+\vspace{0.10 cm}
+
+\begin{onecolentry}
+    \begin{highlights}
+        \item Secured [N] partnerships and expert relationships for GINI, an online marketplace for hiring experts through video and text, by [outreach approach], as a 25\% equity co-founder.
+        \item Kept a team of 7 delivering, with [N] months of runway managed on a [amount] budget, by running day-to-day operations and company finances.
+        \item Raised a [amount] pre-seed round to fund platform development, by pitching to [N] investors.
+    \end{highlights}
+\end{onecolentry}
+
+\vspace{0.2 cm}
+
+
+% =========================
+% VOLUNTEERING & TRUSTEE EXPERIENCE
+% =========================
+
+\section{Volunteering \& Trustee Experience}
+
+\begin{twocolentry}{
+    Month Year -- Present
+}
+    \textbf{Trustee}, Organisation Name
+\end{twocolentry}
+
+\vspace{0.10 cm}
+
+\begin{onecolentry}
+    \begin{highlights}
+        \item Helped [outcome, e.g. grow funding / improve governance] at a [charity type] supporting [beneficiaries], measured by [figure], by [action, e.g. leading a review or advising on data and technology].
+        \item Oversaw [budget / programme / decision] worth [amount or scale], by [committee role or responsibility].
+    \end{highlights}
+\end{onecolentry}
+
+\vspace{0.2 cm}
+
+\begin{twocolentry}{
+    Month Year -- Month Year
+}
+    \textbf{Volunteer Role}, Organisation Name
+\end{twocolentry}
+
+\vspace{0.10 cm}
+
+\begin{onecolentry}
+    \begin{highlights}
+        \item Achieved [outcome], measured by [figure, e.g. people reached, hours, funds raised], by [what you did].
+    \end{highlights}
+\end{onecolentry}
+
+
+% =========================
+% EDUCATION
+% =========================
+
+\section{Education}
+
+\begin{twocolentry}{
+    Sept 2025 -- Sept 2026
+}
+    \textbf{MSc Computer Science}, University of Birmingham
+\end{twocolentry}
+
+\vspace{0.10 cm}
+
+\begin{onecolentry}
+    \begin{highlights}
+        \item \textbf{Overall Grade: 71\%}
+        \item \textbf{Dissertation (75\%)}: Causal Deconfounding and Transport for Parkinson's Voice Detection (Supervised by Dr. Max Little). Improved Parkinson's detection across patient populations by [X\% / metric], by using causal machine learning to reduce confounding in voice data.
+        \item \textbf{Key Modules:} Machine Learning, Artificial Intelligence, Computer Systems, Data Structures \& Algorithms.
+    \end{highlights}
+\end{onecolentry}
+
+\vspace{0.2 cm}
+
+\begin{twocolentry}{
+    Sept 2020 -- July 2023
+}
+    \textbf{BA Business}, University of Portsmouth
+\end{twocolentry}
+
+\vspace{0.10 cm}
+
+\begin{onecolentry}
+    \begin{highlights}
+        \item \textbf{Overall Grade: 68\%}
+        \item \textbf{Dissertation (70\%)}: Strategy, Enterprise and Innovation
+        \item \textbf{Key Modules:} Business Analysis \& Decision Making, Strategic Management, Accounting
+    \end{highlights}
+\end{onecolentry}
+
+% =========================
+% PROJECTS
+% =========================
+
+
+\end{document}
